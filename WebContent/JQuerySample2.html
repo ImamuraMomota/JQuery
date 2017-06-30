@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.myStyle {
+		border:5px solid green;
+		font-size:48px;
+	}
+</style>
+
+</head>
+<body>
+	<p>jQueryの練習</p>
+	<p><a href="http://google.com">Google</a></p>
+	<p><a href="http://yahoo.co.jp">Yahoo!</a></p>
+	<p><a href="http://dotinstall.com">Dotinstall</a></p>
+
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script>
+		$(function() {
+			//セレクタメソッド
+			//.css 設定 取得
+
+			//属性セレクタ
+			// =
+			// !=
+			// *=
+			// ^=
+			// $=
+
+			//addClass removeClass
+
+			$('a[href="http://google.com"]').css('background', 'red');
+			$('a[href!="http://google.com"]').css('background', 'blue');
+			$('a[href*="dotinstall"]').css('background', 'yellow');
+			$('a[href$="jp"]').css('background', 'green');
+
+			$('p').css('color', 'orange').css('background', 'black');
+			console.log($('p').css('color'));
+			$('p').addClass('myStyle');
+
+		});
+	</script>
+	</body>
+</html>

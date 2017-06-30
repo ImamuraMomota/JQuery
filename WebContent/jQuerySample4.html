@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQueryの練習</title>
+</head>
+<body>
+	<p>jQueryの練習</p>
+
+	<div id="box" style="width:100px; height:100px; background:red;"></div>
+
+	<ul>
+		<li>0</li>
+		<li>1</li>
+		<li>2</li>
+	</ul>
+
+
+
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script>
+		$(function() {
+
+			//before, after -> insertBefore, insertAfter
+			//prepend, append -> prepandTo, appendTo
+
+			//エフェクト
+			//hide, show
+			//fadeOut,fadeIn
+			//toggle
+
+
+			/* var li = $('<li>').text('just added');
+			$('ul > li:eq(1)').before(li);
+			li.insertBefore($('ul > li:eq(1)'));
+			$('ul').append(li);
+			li.apendTo($('ul')); */
+
+			//$('#box').hide('slow');
+			$('#box').fadeOut('slow');
+			$('#box').toggle('slow');
+			alert("gone!");
+		});
+	</script>
+</body>
+</html>

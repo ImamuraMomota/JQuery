@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jqueryの練習</title>
+</head>
+<body>
+	<p>JQueryの練習</p>
+	<ul id="main">
+		<li>0</li>
+		<li class="item">1</li>
+		<li class="item">2</li>
+		<li>
+			3
+			<ul id ="sub">
+				<li>3-0</li>
+				<li>3-1</li>
+				<li class="item">3-2</li>
+				<li class="item">3-3</li>
+				<li>3-4</li>
+			</ul>
+		</li>
+
+	</ul>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script>
+		//$(document).ready(function() {}
+		$(function() {
+			//セレクタ：処理対象となるDOM要素を指定する
+			//セレクタ要素の型は$(""),DOM要素は p h1 ul
+			//idに関しては #main
+			//classに関してはドット（.）、CSSと同じ
+			//> 直下の要素
+			//  それ以下の要素
+			//, 複数の要素
+			//+ 隣接する要素, 隣接セレクタ
+			//メソッド：処理
+			//メソッドチェーン
+			$('p').css('color', 'red').hide('slow');
+			$("#sub").css('color', 'red');
+			$(".item").css('color', 'blue');
+			$("#main > .item").css('color', 'green');
+			$("p, .item").css('color', 'yellow');
+			$(".item + .item").css('color', 'white');
+
+			//フィルタ
+			//:eq()
+			//:gt(), :lt()
+			//:even, :odd
+			//:contains()
+			//:first, :last
+			$("#sub > li:eq(2)").css('color', 'pink');
+			$("#sub > li:gt(1)").css('color', 'pink');
+			$("#sub > li:lt(1)").css('color', 'blue');
+			$("#sub > li:odd").css('color', 'black');
+			$("#sub > li:contains('4')").css('color', 'purple');
+
+			//セレクタ・メソッド
+			//DOM要素の指定
+			//parent(), chidren()
+			//next(), prev()
+			//siblings() - 兄弟要素
+			$("#sub").children().css('color', 'orange');
+			$("#sub > li:eq(2)").prev().css('color', 'blue');
+			$("#sub > li:eq(2)").siblings().css('color', 'blue');
+		});
+	</script>
+</body>
+</html>
